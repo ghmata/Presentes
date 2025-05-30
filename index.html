@@ -4,108 +4,340 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosso Presente Especial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 800px;
-            width: 90%;
-            margin: 40px auto;
-            text-align: center;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            padding: 30px;
             box-sizing: border-box;
         }
         
-        .photo-container {
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f9f5f0 0%, #f0e6d6 100%);
+            color: #5c4a36;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 900px;
             width: 100%;
-            height: 400px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
+            background-color: rgba(255, 253, 249, 0.92);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(92, 74, 54, 0.15);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(232, 220, 202, 0.8);
+        }
+        
+        .header {
+            background: linear-gradient(to right, #d4c1a7, #c0a98d);
+            padding: 40px 30px;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
         
-        .photo-container::after {
-            content: '';
+        .header::before {
+            content: "";
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            height: 40%;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            height: 8px;
+            background: linear-gradient(to right, #b89a72, #e8c9a1, #b89a72);
         }
         
-        h1 {
-            color: #444;
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(92, 74, 54, 0.3);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #f8f5f0;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .photo-container {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(92, 74, 54, 0.2);
+            margin-bottom: 40px;
+            position: relative;
+            border: 12px solid #f7f1e7;
+            background-color: #e6d9c6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #e6d9c6 0%, #d4c5af 100%);
+            color: #9a8466;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .photo-placeholder i {
+            font-size: 4rem;
             margin-bottom: 20px;
+            color: #b8a58d;
+        }
+        
+        .message-box {
+            background: #f7f1e7;
+            border-radius: 16px;
+            padding: 35px;
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(184, 165, 141, 0.15);
+            border: 1px solid rgba(232, 220, 202, 0.6);
+            position: relative;
+        }
+        
+        .message-box::before {
+            content: """"";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: rgba(184, 165, 141, 0.3);
+            line-height: 1;
         }
         
         .message {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 1.3rem;
+            text-align: center;
             margin-bottom: 25px;
+            color: #5c4a36;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+            line-height: 1.8;
+        }
+        
+        .message strong {
+            color: #a08662;
+            font-weight: 500;
+        }
+        
+        .pix-container {
+            background: linear-gradient(to right, #e8dac5, #e0d0b9);
+            border-radius: 12px;
+            padding: 25px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            border: 2px dashed #b8a58d;
+            margin-bottom: 30px;
+        }
+        
+        .pix-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #7a664e;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
         
         .pix-key {
-            background-color: #f0f0f0;
-            padding: 15px;
-            border-radius: 8px;
+            background: #f7f1e7;
+            border-radius: 10px;
+            padding: 18px;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #5c4a36;
             font-family: monospace;
-            font-size: 16px;
             word-break: break-all;
-            margin: 20px 0;
-            border: 1px dashed #aaa;
+            box-shadow: 0 3px 10px rgba(92, 74, 54, 0.1);
+            border: 1px solid #d4c1a7;
+            margin: 0 auto 20px;
+            max-width: 500px;
         }
         
         .thank-you {
+            font-size: 1.5rem;
+            text-align: center;
+            color: #9a8466;
             font-style: italic;
-            color: #666;
             margin-top: 20px;
+            font-weight: 500;
+            position: relative;
+            padding-top: 20px;
         }
         
-        @media (max-width: 600px) {
+        .thank-you::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #d4c1a7, transparent);
+        }
+        
+        .ornament {
+            position: absolute;
+            color: rgba(184, 165, 141, 0.2);
+            font-size: 6rem;
+            z-index: 0;
+        }
+        
+        .ornament.top-left {
+            top: 20px;
+            left: 20px;
+        }
+        
+        .ornament.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            transform: rotate(180deg);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(to right, #d4c1a7, #c0a98d);
+            color: #f8f5f0;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
             .photo-container {
                 height: 300px;
+                margin-bottom: 30px;
             }
             
             .message {
-                font-size: 16px;
+                font-size: 1.1rem;
+            }
+            
+            .pix-key {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+            
+            .thank-you {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                padding: 30px 15px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .photo-container {
+                height: 250px;
+            }
+            
+            .message-box {
+                padding: 25px 20px;
+            }
+            
+            .pix-container {
+                padding: 20px 15px;
+            }
+            
+            .pix-title {
+                font-size: 1.4rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Nosso Presente Especial</h1>
-        
-        <div class="photo-container" style="background-image: url('https://example.com/sua-foto-com-esposa.jpg');">
-            <!-- Substitua a URL acima pelo link real da sua foto -->
+        <div class="ornament top-left">
+            <i class="fas fa-heart"></i>
         </div>
         
-        <div class="message">
-            Estar ao seu lado neste dia especial é o nosso grande presente. Caso queira ir além, nossa sugestão é um depósito bancário através da chave pix:
+        <div class="ornament bottom-right">
+            <i class="fas fa-heart"></i>
         </div>
         
-        <div class="pix-key">chave</div>
-        <!-- Substitua "chave" pela sua chave PIX real -->
+        <div class="header">
+            <h1>Celebrando Juntos</h1>
+            <p>Sua presença é o maior presente que poderíamos receber</p>
+        </div>
         
-        <div class="thank-you">
-            Agradecemos pelo carinho!
+        <div class="content">
+            <div class="photo-container">
+                <div class="photo-placeholder">
+                    <i class="fas fa-camera"></i>
+                    <p>Espaço para sua foto com sua esposa (1066x1600)</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Substitua este espaço pela sua imagem</p>
+                </div>
+            </div>
+            
+            <div class="message-box">
+                <p class="message">
+                    Estar ao seu lado neste dia especial é o nosso grande presente. Caso queira ir além, nossa sugestão é um depósito bancário através da chave pix:
+                </p>
+            </div>
+            
+            <div class="pix-container">
+                <h2 class="pix-title">
+                    <i class="fas fa-gift"></i> Chave PIX
+                </h2>
+                <div class="pix-key">chave-pix@exemplo.com</div>
+                <p style="color: #7a664e; font-size: 0.95rem;">(Substitua pela sua chave PIX real)</p>
+            </div>
+            
+            <p class="thank-you">Agradecemos pelo carinho!</p>
+        </div>
+        
+        <div class="footer">
+            <p>Feito com ❤️ para nosso dia especial</p>
         </div>
     </div>
 </body>
