@@ -1,0 +1,126 @@
+:root {
+  --background: #f9f6f8;
+  --overlay: rgba(255,255,255,0.55);
+  --main-color: #b48ca4;
+  --accent: #e4c3d1;
+  --text: #3e2f36;
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --radius: 26px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 65vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow);
+  /* Plano de fundo com imagem + efeito translúcido */
+  background: 
+    linear-gradient(180deg, var(--overlay) 60%, rgba(255,255,255,0.7) 100%),
+    url('Casamento.jpg') center top/cover no-repeat;
+  filter: blur(0.5px) brightness(0.95);
+  animation: fadeIn 1.5s ease;
+}
+
+.hero-img-overlay {
+  position: absolute;
+  inset: 0;
+  /* Se quiser reforçar o overlay, pode ajustar a cor aqui */
+  background: linear-gradient(180deg, var(--overlay) 60%, rgba(255,255,255,0.7) 100%);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100vw;
+  padding: 3rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 1.8s cubic-bezier(.36,.07,.19,.97);
+}
+
+.hero-content h1 {
+  text-align: center;
+  font-family: 'Great Vibes', 'Times New Roman', serif;
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: var(--main-color);
+  letter-spacing: 0.02em;
+  background: rgba(255,255,255,0.82);
+  border-radius: var(--radius);
+  padding: 2rem 1.2rem;
+  box-shadow: var(--shadow);
+  margin: 0;
+  text-shadow: 0 2px 16px #fff8, 0 1px 1px #e5d1e3;
+  backdrop-filter: blur(2px);
+  line-height: 1.38;
+  transition: background 0.5s;
+}
+
+.pix-key {
+  font-family: 'Montserrat', cursive;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--accent);
+  padding: .1em .5em;
+  border-radius: 1em;
+  letter-spacing: .04em;
+  box-shadow: 0 2px 8px #e4c3d160;
+}
+
+footer {
+  width: 100%;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 1.08em;
+  color: var(--main-color);
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 2rem;
+  animation: fadeIn 2.3s;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+    padding: 1.2rem .7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-container {
+    min-height: 40vh;
+  }
+  .hero-content {
+    padding: 1.5rem 0.3rem 1rem 0.3rem;
+  }
+  .hero-content h1 {
+    font-size: 1.05rem;
+    padding: 1rem .2rem;
+  }
+}
