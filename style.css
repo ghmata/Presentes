@@ -31,8 +31,8 @@ body {
 .bg-image {
   position: fixed;
   top: 0; left: 0;
-  width: 100vw; height: 62vh;
-  background: url('Casamento.jpg') center top / cover no-repeat;
+  width: 100vw; height: 100vh;
+  background: url('Casamento.jpg') center center / cover no-repeat;
   filter: blur(5px) brightness(0.97);
   z-index: 0;
   will-change: transform;
@@ -42,7 +42,7 @@ body {
 .bg-overlay {
   position: fixed;
   top: 0; left: 0;
-  width: 100vw; height: 62vh;
+  width: 100vw; height: 100vh;
   background: var(--overlay-bg);
   z-index: 1;
   pointer-events: none;
