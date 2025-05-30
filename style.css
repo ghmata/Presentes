@@ -1,0 +1,186 @@
+:root {
+  --cor-marfil: #FAF6EF;
+  --cor-rosa: #F8E7EF;
+  --cor-rosa-overlay: rgba(248, 231, 239, 0.85);
+  --cor-dourado: #EAC87A;
+  --cor-titulo: #B6866F;
+  --cor-texto: #6D4C41;
+  --cor-heart: #E57373;
+  --cor-heart-hover: #E53935;
+  --shadow: 0 4px 22px 0 rgba(100, 60, 30, 0.12);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Lora', serif;
+  background: var(--cor-marfil);
+  color: var(--cor-texto);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.background-parallax {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 80vh;
+  min-height: 350px;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.background-img {
+  width: 100vw;
+  min-height: 80vh;
+  height: 80vh;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(4px) brightness(0.92);
+  transition: filter 0.4s;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 1;
+}
+.background-overlay {
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: var(--cor-rosa-overlay);
+  z-index: 2;
+  pointer-events: none;
+}
+
+main {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.conteudo-casamento {
+  background: rgba(255,255,255,0.95);
+  box-shadow: var(--shadow);
+  border-radius: 2.5vw 2.5vw 0 0 / 5vw 5vw 0 0;
+  padding: 4vw 2vw 3vw 2vw;
+  margin-top: 45vh;
+  margin-bottom: 4vw;
+  width: 70vw;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vw;
+  animation: fade-in 1.5s ease;
+}
+
+.titulo-casamento {
+  font-family: 'Dancing Script', cursive;
+  color: var(--cor-titulo);
+  font-size: 2.7vw;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin: 0;
+  padding: 0.9vw 0 0.7vw 0;
+  background: none;
+  border-radius: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+.heart {
+  color: var(--cor-heart);
+  font-size: 1.3em;
+  transition: color 0.4s, transform 0.5s;
+  animation: heart-beat 2.2s infinite;
+  user-select: none;
+}
+.left-heart { animation-delay: 0s; }
+.right-heart { animation-delay: 1.1s; }
+.titulo-casamento .heart:hover {
+  color: var(--cor-heart-hover);
+  transform: scale(1.12) rotate(-8deg);
+}
+
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  10% { transform: scale(1.20); }
+  20% { transform: scale(1); }
+}
+
+.texto-casamento {
+  width: 70vw;
+  max-width: 100%;
+  margin: 0 auto;
+  line-height: 1.2;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2vw;
+  background: none;
+  color: var(--cor-texto);
+  text-align: center;
+  border-radius: 1.2vw;
+  padding: 1.4vw 0.7vw;
+  letter-spacing: 0.04em;
+}
+
+.pix-container {
+  margin-top: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pix-img {
+  width: 100px;
+  height: 100px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 2px solid var(--cor-rosa);
+  box-shadow: 0 2px 10px 0 rgba(150, 60, 90, 0.13);
+  transition: filter 0.3s, box-shadow 0.3s;
+  background: #fff;
+}
+.pix-img:hover {
+  filter: brightness(0.85);
+  box-shadow: 0 4px 18px 0 rgba(150, 60, 90, 0.20);
+  cursor: pointer;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 1.2s ease-in forwards;
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 768px) {
+  .conteudo-casamento {
+    width: 90vw;
+    padding: 7vw 3vw 6vw 3vw;
+    gap: 3vw;
+    margin-top: 33vh;
+  }
+  .titulo-casamento {
+    font-size: 4vw;
+    padding: 2vw 0 1vw 0;
+  }
+  .texto-casamento {
+    width: 90vw;
+    font-size: 3.5vw;
+    padding: 3vw 2vw;
+    border-radius: 3vw;
+  }
+  .pix-img {
+    width: 90px;
+    height: 90px;
+  }
+}
