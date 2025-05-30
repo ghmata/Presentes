@@ -29,7 +29,7 @@ body {
   box-shadow: var(--shadow);
   /* Plano de fundo com imagem + efeito translúcido */
   background: 
-    linear-gradient(180deg, var(--overlay) 60%, rgba(255,255,255,0.7) 100%),
+    linear-gradient(180deg, var(--overlay) 20%, rgba(255,255,255,0.7) 100%),
     url('Casamento.jpg') center top/cover no-repeat;
   filter: blur(0.5px) brightness(0.95);
   animation: fadeIn 1.5s ease;
