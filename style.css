@@ -171,8 +171,18 @@ h1 {
   .frase {
     font-size: 5vw;
   }
-  .pix-img {
-    max-width: 80vw;
+  .pix-img { 
+    width: 90px;
+  height: 90px;
+  border-radius: 18px; /* Quadrado com cantos levemente arredondados */
+  box-shadow: 0 6px 32px 0 rgba(176, 145, 130, 0.13);
+  transition: filter 0.3s, box-shadow 0.3s;
+  filter: brightness(1);
+  cursor: pointer;
+  border: 3px solid var(--dourado);
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
   }
 }
 
